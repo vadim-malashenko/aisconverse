@@ -9,7 +9,7 @@ abstract class BaseHooks {
 	const HOOKS = [];
 
 
-	static function add() : void {
+	static function add() {
 
 		try {
 
@@ -34,7 +34,7 @@ abstract class BaseHooks {
 
 	}
 
-	static function hook( \ReflectionMethod $method, string $tag = NULL ) : void {
+	static function hook( \ReflectionMethod $method, string $tag = NULL ) {
 
 		if ( preg_match( '#ActionHooks$#', static::class ) ) {
 			$hook = '\\add_action';

@@ -22,7 +22,7 @@ class SearchFormWidget extends \WP_Widget {
 		\WP_Widget::__construct( 'lsearch-form', 'Search form', $widget_ops );
 	}
 
-	public function widget( $args, $instance ) {
+	public function widget( $args, $instance) {
 
 		echo $args ['before_widget'];
 
@@ -37,15 +37,5 @@ class SearchFormWidget extends \WP_Widget {
 		<?php
 
 		echo $args ['after_widget'];
-	}
-
-	public function update( $new_instance, $old_instance ) {
-
-		return $new_instance;
-	}
-
-	public function form( $instance ) {
-
-
 	}
 }

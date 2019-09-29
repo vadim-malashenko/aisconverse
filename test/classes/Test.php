@@ -21,7 +21,7 @@ class Test {
 	static $template_dir_path = '';
 
 
-	static function load( $file ) {
+	static function load( string $file ) {
 
 		ini_set( 'unserialize_callback_func', 'spl_autoload_call' );
 
@@ -49,7 +49,7 @@ class Test {
 		}
 	}
 
-	static function load_class( $name ) {
+	static function load_class( string $name ) {
 
 		$file = self::find_file( $name, self::$classes );
 
@@ -62,7 +62,7 @@ class Test {
 		return class_exists( $name ) || trait_exists( $name );
 	}
 
-	static function load_config( $name ) {
+	static function load_config( string $name ) : array {
 
 		$file = self::find_file( $name, self::$configs );
 
@@ -76,7 +76,7 @@ class Test {
 	}
 
 
-	static function find_file( $name, $dir ) {
+	static function find_file( string $name, string $dir ) {
 
 		$file = $dir;
 		$name = ltrim( $name, '/\\' );
@@ -117,9 +117,10 @@ class Test {
 	}
 
 
-	static function list_classes( $namespace, $strip_base = TRUE ) {
+	static function list_classes( string $namespace, bool $strip_base = NULL ) : array {
 
 		$namespace = trim( $namespace, '\\' );
+		$strip_base = $strip_base ?: TRUE;
 
 		if ( ! is_dir( $path = self::$classes . str_replace( '\\', '/', $namespace ) ) ) {
 			return [];
@@ -138,7 +139,7 @@ class Test {
 		}, [] );
 	}
 
-	static function list_files( $path, $ext = NULL ) {
+	static function list_files( string $path, string $ext = NULL ) : array {
 
 		$files = array_diff( scandir( $path ), [ '.', '..' ] );
 

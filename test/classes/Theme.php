@@ -2,14 +2,10 @@
 
 namespace Aisconverse;
 
-
 class Theme {
 
-
-	const VERSION = '0.0.1';
 	const NAME = 'Test';
 	const ID = 'test';
-
 
 	static function load() {
 
