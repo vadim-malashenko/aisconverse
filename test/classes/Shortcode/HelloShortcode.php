@@ -9,7 +9,7 @@ class HelloShortcode {
 
 		?>
 
-        <div class="test-shortcode">Hello Wordl!</div>
+        <div id="hello-shortcode">Hello, Wordl!</div>
 
 		<?php
 	}

@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<?php get_template_part( 'template-parts/header', 'slider' ); ?>
+
     <section class="main-content">
 
         <div class="container">
@@ -48,7 +50,7 @@
 
                         </div><!--blog-post end-->
 
-					<?php endwhile; ?>
+					<?php endwhile; wp_reset_postdata(); ?>
 
                 </div><!--blog-posts end-->
 
