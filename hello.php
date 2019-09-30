@@ -8,9 +8,9 @@ Version: 0.0.1
 
 add_action ('wp', function () {
 
-	$front_page_id = get_option( 'page_on_front' );
-
 	if ( is_front_page ()) {
+
+		$front_page_id = get_option( 'page_on_front' );
 
 		add_filter( 'the_content', function ( $content ) use ($front_page_id) {
 
